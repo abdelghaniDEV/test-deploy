@@ -13,8 +13,8 @@ connectDB();
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/client/build')));  // Front End
-app.use(express.static(path.join(__dirname, '/dashboard/build')));   // Admin Panel
+app.use(express.static(path.join(__dirname, './client/build')));  // Front End
+app.use(express.static(path.join(__dirname, './dashboard/build')));   // Admin Panel
 
 
 // Middleware
@@ -31,9 +31,9 @@ app.use("/api/users" , usersRouter);
 app.get('*', (req, res) => {
   // التأكد من أن المسار يبدأ بـ /admin أو / (أو أي شيء يناسب هيكل التطبيق لديك)
   if (req.url.startsWith('/dashboard')) {
-    res.sendFile(path.join(__dirname, '/dashboard/build', 'index.html'));
+    res.sendFile(path.join(__dirname, './dashboard/build', 'index.html'));
   } else {
-    res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, './client/build', 'index.html'));
   }
 });
 
