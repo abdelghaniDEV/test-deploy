@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "npm install --prefix ./client && npm run build --prefix ./client && npm install --prefix ./dashboard && npm run build --prefix ./dashboard && npm install", 
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -12,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.21.0",
